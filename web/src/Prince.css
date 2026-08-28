@@ -1,0 +1,125 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #12141c;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #181a20;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1c23;
+  padding: 12px 24px;
+  border-bottom: 1px solid #2a2d37;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  color: #3b82f6;
+}
+
+.logo-container {
+  background-color: #ffffff;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.brain-logo {
+  width: 28px;
+  height: 28px;
+  stroke: #1a1c23;
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 48px;
+  border-bottom: 2px solid #142834;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  color: #a0aec0;
+  font-family: monospace;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  border-right: 2px solid #3b82f6;
+  white-space: nowrap;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #181b22;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-title {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.feature-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-brain {
+  width: 120px;
+  height: 120px;
+  stroke: #718096;
+}
+
+.footer {
+  background-color: #1c2538;
+  height: 60px;
+  border-top: 1px solid #2d3748;
+}
