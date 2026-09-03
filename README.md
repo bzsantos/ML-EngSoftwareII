@@ -3,6 +3,7 @@
 ### No terminal do seu projeto, execute:
 
 > npm install react-router-dom
+> npm install react-icons
 
 ## 2. Configuração das rotas principais (no seu arquivo principal, geralmente App.tsx ou main.tsx)
 ### Você define qual componente corresponde a cada URL:
