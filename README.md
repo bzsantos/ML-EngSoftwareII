@@ -2,7 +2,7 @@
 ## 1. Instalação da biblioteca 
 ### No terminal do seu projeto, execute:
 
-> npm install react-router-dom
+> npm install react-router-dom <br>
 > npm install react-icons
 
 ## 2. Configuração das rotas principais (no seu arquivo principal, geralmente App.tsx ou main.tsx)
