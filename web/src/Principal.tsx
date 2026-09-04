@@ -1,49 +1,60 @@
-// App.tsx
 import React from 'react';
-import './Prince.css';
+import { Link } from 'react-router-dom';
+import { FaHome, FaUtensils, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import pizzaLogo from './assets/pizza2.jpg'; // Ajuste o caminho se necessário
 
-export function Index() {
+export default function Principal() {
+  // Esquema de cores exato baseado na sua imagem
+  const colors = {
+    bgDark: '#2e0441', // Fundo principal da página
+    bgHeader: '#4a154b', // Fundo do cabeçalho
+    text: '#ffffff', // Texto e ícones brancos
+    accent: '#ffcc00', // Amarelo do botão e ícone de endereço
+    textOnAccent: '#333333' // Cor escura do texto no botão amarelo
+  };
+
   return (
-    <div className="container">
-      <header className="header">
-        <nav className="nav">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#sobre" className="nav-link">Sobre</a>
-        </nav>
-        <div className="logo-container">
-          <svg className="brain-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <path d="M12 2a4 4 0 0 0-4 4v1a3 3 0 0 0-3 3 3 3 0 0 0 1 2.23V15a3 3 0 0 0 3 3h1v1a3 3 0 0 0 3 3 3 3 0 0 0 3-3v-1h1a3 3 0 0 0 3-3v-2.77A3 3 0 0 0 19 10a3 3 0 0 0-3-3V6a4 4 0 0 0-4-4z" />
-            <line x1="12" y1="2" x2="12" y2="22" strokeDasharray="2 2" />
-          </svg>
+    <div style={{ backgroundColor: colors.bgDark, minHeight: '100vh', color: colors.text, fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
+      {/* Header */}
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 2rem', backgroundColor: colors.bgHeader, borderBottom: '1px solid #666' }}>
+        {/* Logo e Título */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <img src={pizzaLogo} alt="Pizza Logo" style={{ width: '50px', height: '50px' }} />
+          <h1 style={{ fontStyle: 'italic', fontSize: '1.8rem', margin: 0 }}>Pizzaria-UX</h1>
         </div>
+        
+        {/* Navegação */}
+        <nav style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          {/* Link Home (Ativo) */}
+          <Link to="/" style={{ color: colors.text, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '1.1rem', fontWeight: 'bold' }}>
+            <FaHome /> Home
+          </Link>
+          
+          {/* Link Sobre */}
+          <Link to="/produtos" style={{ color: colors.text, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px', fontSize: '1.1rem' }}>
+            <FaUtensils /> Produtos
+          </Link>
+
+          {/* Botão "Peça já!" */}
+          <button style={{ backgroundColor: colors.accent, color: colors.textOnAccent, border: 'none', padding: '8px 20px', borderRadius: '20px', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontSize: '1rem' }}>
+            Peça já! <FaWhatsapp style={{ fontSize: '1.2rem' }} />
+          </button>
+        </nav>
       </header>
 
-      <section className="hero-banner">
-        <div className="hero-content">
-          <span className="hero-tag">MACHINE LEARNING</span>
-        </div>
-      </section>
-
-      <main className="main-content">
-        <div className="content-wrapper">
-          <h1 className="main-title">The New Era</h1>
-          <div className="feature-illustration">
-            <svg className="network-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-              <circle cx="12" cy="12" r="6" />
-              <path d="M12 2v4m0 12v4M2 12h4m12 0h4" />
-              <path d="M7.75 7.75l2.83 2.83m2.84 2.84l2.83 2.83M7.75 16.25l2.83-2.83m2.84-2.84l2.83-2.83" />
-              <rect x="3" y="3" width="4" height="4" rx="1" />
-              <rect x="17" y="3" width="4" height="4" rx="1" />
-              <rect x="3" y="17" width="4" height="4" rx="1" />
-              <rect x="17" y="17" width="4" height="4" rx="1" />
-            </svg>
-          </div>
-        </div>
+      {/* Conteúdo Principal */}
+      <main style={{ flex: 1, textAlign: 'center', padding: '4rem 1rem' }}>
+        <h2 style={{ fontSize: '3rem', margin: 0, letterSpacing: '1px' }}>
+          Sabores de Pizzas
+        </h2>
+        {/* Aqui você pode adicionar os cards de pizza, seguindo o estilo da imagem de exemplo se desejar */}
       </main>
 
-      <footer className="footer"></footer>
+      {/* Footer */}
+      <footer style={{ textAlign: 'center', padding: '1rem 0', backgroundColor: colors.bgHeader, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', borderTop: '1px solid #666' }}>
+        <FaMapMarkerAlt style={{ color: colors.accent, fontSize: '1.1rem' }} />
+        <span style={{ fontSize: '0.95rem' }}>Avenida Antônia Rosa Fioravanti, 804, Mauá, São Paulo, 09390-120</span>
+      </footer>
     </div>
   );
 }
-
-export default Index;
