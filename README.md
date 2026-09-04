@@ -52,3 +52,30 @@ export default function Index() {
 }
 
 ```
+
+### Problemas com commit
+
+```
+
+Opção 1: Fazer um Merge (Padrão mais seguro)
+Junta as alterações do GitHub com as suas criando um commit de mesclagem:
+
+Bash
+> git pull --no-rebase origin main
+(Se preferir definir isso como padrão para não perguntar mais: git config pull.rebase false)
+
+Opção 2: Fazer um Rebase (Deixa o histórico linear)
+Coloca os seus commits locais na frente dos commits que vieram do GitHub:
+
+Bash
+> git pull --rebase origin main
+(Se preferir definir isso como padrão: git config pull.rebase true)
+
+Opção 3: Se você não alterou nada localmente importante
+Se você só quer baixar a versão do GitHub e descartar/ignorar qualquer conflito local (cuidado para não perder códigos importantes):
+
+Bash
+> git pull --ff-only origin main
+Após rodar uma das opções acima (geralmente a Opção 1 ou 2 resolvem), o seu repositório estará sincronizado e você poderá dar o seu git push normalmente.
+
+```
